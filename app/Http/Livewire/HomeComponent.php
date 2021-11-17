@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class HomeComponent extends Component
 {
     public function render()
     {
-        return view('livewire.home-component')->layout('layouts.base');
+        $latestProduct = Product::orderBy('created_at','DESC')->get();
+        return view('livewire.home-component',['latestProduct'=>$latestProduct])->layout('layouts.base');
     }
 }

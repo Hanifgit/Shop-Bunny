@@ -12,6 +12,7 @@
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/flexslider.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/chosen.min.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
 	<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/color-01.css') }}">
@@ -37,14 +38,14 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="Phone: (+880) 1741885987" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+880) </a>
 								</li>
 							</ul>
 						</div>
 						<div class="topbar-menu right-menu">
 							<ul>
 								<li class="menu-item lang-menu menu-item-has-children parent">
-									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-en.png') }}" alt="lang-en"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<a title="English" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-ban.png') }}" alt="lang-ban"></span>English<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu lang" >
 										<li class="menu-item" ><a title="hungary" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-hun.png')}}" alt="lang-hun"></span>Hungary</a></li>
 										<li class="menu-item" ><a title="german" href="#"><span class="img label-before"><img src="{{ asset('assets/images/lang-ger.png')}}" alt="lang-ger" ></span>German</a></li>
@@ -53,16 +54,16 @@
 									</ul>
 								</li>
 								<li class="menu-item menu-item-has-children parent" >
-									<a title="Dollar (USD)" href="#">Dollar (USD)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
+									<a title="Dollar (USD)" href="#">Taka (BDT)<i class="fa fa-angle-down" aria-hidden="true"></i></a>
 									<ul class="submenu curency" >
 										<li class="menu-item" >
-											<a title="Pound (GBP)" href="#">Pound (GBP)</a>
+											<a title="Pound (GBP)" href="#">Dollar (USD)</a>
 										</li>
 										<li class="menu-item" >
 											<a title="Euro (EUR)" href="#">Euro (EUR)</a>
 										</li>
 										<li class="menu-item" >
-											<a title="Dollar (USD)" href="#">Dollar (USD)</a>
+											<a title="Dollar (USD)" href="#">Taka (TK)</a>
 										</li>
 									</ul>
 								</li>
@@ -76,6 +77,15 @@
 													<li class="menu-item" >
 														<a title="Dashboard" href="{{ route('admin.dashboard') }}">Dashboard</a>
 													</li>
+												    <li class="menu-item">
+												        <a title="categories" href="{{ route('admin.categories') }}">Categories</a>
+												    </li>
+													<li class="menu-item">
+												        <a title="products" href="{{ route('admin.products') }}">All Products</a>
+												    </li>
+													<li class="menu-item">
+												        <a title="products" href="{{ route('admin.orders') }}">All Orders</a>
+												    </li>
 													<li class="menu-item" >
 														<a title="Logout" href="{{ route('logout') }}" onclick="event.preventDefault();
 														  document.getElementById('logout-form').submit()">Logout</a>
@@ -115,44 +125,15 @@
 				<div class="container">
 					<div class="mid-section main-info-area">
 
-						<div class="wrap-logo-top left-section">
+						{{-- <div class="wrap-logo-top left-section">
 							<a href="index.html" class="link-to-home"><img src="{{ asset('assets/images/logo-top-1.png') }}" alt="mercado"></a>
-						</div>
+						</div> --}}
 
-						<div class="wrap-search center-section">
-							<div class="wrap-search-form">
-								<form action="#" id="form-search-top" name="form-search-top">
-									<input type="text" name="search" value="" placeholder="Search here...">
-									<button form="form-search-top" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
-									<div class="wrap-list-cate">
-										<input type="hidden" name="product-cate" value="0" id="product-cate">
-										<a href="#" class="link-control">All Category</a>
-										<ul class="list-cate">
-											<li class="level-0">All Category</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-											<li class="level-1">-Electronics</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Headphone & Headsets</li>
-											<li class="level-2">Mp3 Player & Acessories</li>
-											<li class="level-1">-Smartphone & Table</li>
-											<li class="level-2">Batteries & Chargens</li>
-											<li class="level-2">Mp3 Player & Headphones</li>
-											<li class="level-2">Table & Accessories</li>
-										</ul>
-									</div>
-								</form>
-							</div>
-						</div>
+						
+						@livewire('header-search-component')
 
 						<div class="wrap-icon right-section">
-							<div class="wrap-icon-section wishlist">
+							{{-- <div class="wrap-icon-section wishlist">
 								<a href="#" class="link-direction">
 									<i class="fa fa-heart" aria-hidden="true"></i>
 									<div class="left-info">
@@ -160,16 +141,8 @@
 										<span class="title">Wishlist</span>
 									</div>
 								</a>
-							</div>
-							<div class="wrap-icon-section minicart">
-								<a href="#" class="link-direction">
-									<i class="fa fa-shopping-basket" aria-hidden="true"></i>
-									<div class="left-info">
-										<span class="index">4 items</span>
-										<span class="title">CART</span>
-									</div>
-								</a>
-							</div>
+							</div> --}}
+							@livewire('cart-count-component')
 							<div class="wrap-icon-section show-up-after-1024">
 								<a href="#" class="mobile-navigation">
 									<span></span>
@@ -183,7 +156,7 @@
 				</div>
 
 				<div class="nav-section header-sticky">
-					<div class="header-nav-section">
+					{{-- <div class="header-nav-section">
 						<div class="container">
 							<ul class="nav menu-nav clone-main-menu" id="mercado_haead_menu" data-menuname="Sale Info" >
 								<li class="menu-item"><a href="#" class="link-term">Weekly Featured</a><span class="nav-label hot-label">hot</span></li>
@@ -193,7 +166,7 @@
 								<li class="menu-item"><a href="#" class="link-term">Top rated items</a><span class="nav-label hot-label">hot</span></li>
 							</ul>
 						</div>
-					</div>
+					</div> --}}
 
 					<div class="primary-nav-section">
 						<div class="container">
@@ -202,7 +175,7 @@
 									<a href="/" class="link-term mercado-item-title"><i class="fa fa-home" aria-hidden="true"></i></a>
 								</li>
 								<li class="menu-item">
-									<a href="about-us.html" class="link-term mercado-item-title">About Us</a>
+									<a href="/about" class="link-term mercado-item-title">About Us</a>
 								</li>
 								<li class="menu-item">
 									<a href="/shop" class="link-term mercado-item-title">Shop</a>
@@ -233,14 +206,14 @@
 				<div class="container">
 					<ul>
 						<li class="fc-info-item">
-							<i class="fa fa-truck" aria-hidden="true"></i>
+							{{-- <i class="fa fa-truck" aria-hidden="true"></i>
 							<div class="wrap-left-info">
 								<h4 class="fc-name">Free Shipping</h4>
 								<p class="fc-desc">Free On Oder Over $99</p>
-							</div>
+							</div> --}}
 
 						</li>
-						<li class="fc-info-item">
+						{{-- <li class="fc-info-item">
 							<i class="fa fa-recycle" aria-hidden="true"></i>
 							<div class="wrap-left-info">
 								<h4 class="fc-name">Guarantee</h4>
@@ -263,7 +236,7 @@
 								<p class="fc-desc">We Have Support 24/7</p>
 							</div>
 
-						</li>
+						</li> --}}
 					</ul>
 				</div>
 			</div>
@@ -283,15 +256,15 @@
 										<ul>
 											<li>
 												<i class="fa fa-map-marker" aria-hidden="true"></i>
-												<p class="contact-txt">45 Grand Central Terminal New York,NY 1017 United State USA</p>
+												<p class="contact-txt">Mirpur - 02 ,Dhaka,Bangladesh</p>
 											</li>
 											<li>
 												<i class="fa fa-phone" aria-hidden="true"></i>
-												<p class="contact-txt">(+123) 456 789 - (+123) 666 888</p>
+												<p class="contact-txt">(+880) 1741885987</p>
 											</li>
 											<li>
 												<i class="fa fa-envelope" aria-hidden="true"></i>
-												<p class="contact-txt">Contact@yourcompany.com</p>
+												<p class="contact-txt">ahasan.papon@ahasan.papon.com</p>
 											</li>											
 										</ul>
 									</div>
@@ -300,6 +273,23 @@
 						</div>
 
 						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+							<div class="wrap-footer-item">
+								<h3 class="item-header">Social network</h3>
+								<div class="item-content">
+									<div class="wrap-list-item social-network">
+										<ul>
+											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Hot Line</h3>
@@ -323,9 +313,9 @@
 								</div>
 							</div>
 
-						</div>
+						</div> --}}
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12 box-twin-content ">
 							<div class="row">
 								<div class="wrap-footer-item twin-item">
 									<h3 class="item-header">My Account</h3>
@@ -356,13 +346,13 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 					</div>
 
 					<div class="row">
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">We Using Safe Payments:</h3>
 								<div class="item-content">
@@ -371,26 +361,11 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
-							<div class="wrap-footer-item">
-								<h3 class="item-header">Social network</h3>
-								<div class="item-content">
-									<div class="wrap-list-item social-network">
-										<ul>
-											<li><a href="#" class="link-to-item" title="twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="pinterest"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-											<li><a href="#" class="link-to-item" title="vimeo"><i class="fa fa-vimeo" aria-hidden="true"></i></a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</div>
+						
 
-						<div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+						{{-- <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
 							<div class="wrap-footer-item">
 								<h3 class="item-header">Dowload App</h3>
 								<div class="item-content">
@@ -402,12 +377,13 @@
 									</div>
 								</div>
 							</div>
-						</div>
+						</div> --}}
 
 					</div>
 				</div>
+				
 
-				<div class="wrap-back-link">
+				{{-- <div class="wrap-back-link">
 					<div class="container">
 						<div class="back-link-box">
 							<h3 class="backlink-title">Quick Links</h3>
@@ -455,11 +431,11 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 
 			</div>
 
-			<div class="coppy-right-box">
+			{{-- <div class="coppy-right-box">
 				<div class="container">
 					<div class="coppy-right-item item-left">
 						<p class="coppy-right-text">Copyright © 2020 Surfside Media. All rights reserved</p>
@@ -476,7 +452,7 @@
 					</div>
 					<div class="clearfix"></div>
 				</div>
-			</div>
+			</div> --}}
 		</div>
 	</footer>
 	
@@ -484,11 +460,13 @@
 	<script src="{{ asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4') }}"></script>
 	<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.flexslider.js') }}"></script>
-	<script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script>
+	{{-- <script src="{{ asset('assets/js/chosen.jquery.min.js') }}"></script> --}}
 	<script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.countdown.min.js') }}"></script>
 	<script src="{{ asset('assets/js/jquery.sticky.js') }}"></script>
-	<script src="{{ asset('assets/js/functions.js"></script>
+	<script src="{{ asset('assets/js/functions.js') }}"></script>
+
+	{{-- <script src="https://cdn.tiny.cloud/1/gv9op5fs494lj2o2o3xnrsua036u28c6x4pqfik6xvjkq25n/tinymce/5/tinymce.min.js" referrerpolicy="origin"> --}}
 	@livewireScripts
 
 </body>
